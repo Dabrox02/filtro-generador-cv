@@ -12,5 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "json-server": "0.17.4"
+  },
+  "dependencies": {
+    "validator": "^13.11.0"
   }
 }
