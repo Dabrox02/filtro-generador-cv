@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "json-server --watch api/data/db.json --port 5010 --routes api/data/routes.json"
+    "dev": "json-server --watch api/data/db.json --port 5010 --routes api/data/routes.json --host 127.0.0.1"
   },
   "keywords": [],
   "author": "",

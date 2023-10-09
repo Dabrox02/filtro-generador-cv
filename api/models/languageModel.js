@@ -1,13 +1,14 @@
-import { Crud } from "../crud/crud.js";
+import crud from "../crud/crud.js";
 
-export class LanguageModel extends Crud {
-    constructor() {
-        super("http://localhost:5010/languages");
-    }
+const endpoint = "/languages";
+const interfaz = {
+    "language_name": "string"
+};
 
-    
-}
+const language = crud({ endpoint, interfaz });
+export default language;
 
-let lm = new LanguageModel();
-// console.log("hola", lm);
-console.log(await lm.postOne());
+// console.log(await language.getOne(25));
+console.log(await language.postOne({
+    "language_name": "null"
+}));
