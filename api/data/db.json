@@ -1,0 +1,294 @@
+{
+    "curriculums": [],
+    "hard-skills": [
+        {
+            "hard-skill-name": "Programming",
+            "id": 1
+        },
+        {
+            "hard-skill-name": "Data Analysis",
+            "id": 2
+        },
+        {
+            "hard-skill-name": "Web Development",
+            "id": 3
+        },
+        {
+            "hard-skill-name": "Mobile App Development",
+            "id": 4
+        },
+        {
+            "hard-skill-name": "Network Administration",
+            "id": 5
+        },
+        {
+            "hard-skill-name": "Database Management",
+            "id": 6
+        },
+        {
+            "hard-skill-name": "Cybersecurity",
+            "id": 7
+        },
+        {
+            "hard-skill-name": "Cloud Computing",
+            "id": 8
+        },
+        {
+            "hard-skill-name": "System Administration",
+            "id": 9
+        },
+        {
+            "hard-skill-name": "Hardware Troubleshooting",
+            "id": 10
+        },
+        {
+            "hard-skill-name": "Software Testing",
+            "id": 11
+        },
+        {
+            "hard-skill-name": "Machine Learning",
+            "id": 12
+        },
+        {
+            "hard-skill-name": "Artificial Intelligence",
+            "id": 13
+        },
+        {
+            "hard-skill-name": "Robotics",
+            "id": 14
+        },
+        {
+            "hard-skill-name": "Data Mining",
+            "id": 15
+        },
+        {
+            "hard-skill-name": "Statistical Analysis",
+            "id": 16
+        },
+        {
+            "hard-skill-name": "CAD/CAM",
+            "id": 17
+        },
+        {
+            "hard-skill-name": "3D Printing",
+            "id": 18
+        },
+        {
+            "hard-skill-name": "Digital Marketing",
+            "id": 19
+        },
+        {
+            "hard-skill-name": "Search Engine Optimization",
+            "id": 20
+        }
+    ],
+    "soft-skills": [
+        {
+            "soft_skill_name": "communication skills",
+            "id": 1
+        },
+        {
+            "soft_skill_name": "timekeeping",
+            "id": 2
+        },
+        {
+            "soft_skill_name": "critical thinking",
+            "id": 3
+        },
+        {
+            "soft_skill_name": "leadership skills",
+            "id": 4
+        },
+        {
+            "soft_skill_name": "motivation",
+            "id": 5
+        },
+        {
+            "soft_skill_name": "ambition",
+            "id": 6
+        },
+        {
+            "soft_skill_name": "negotiating",
+            "id": 7
+        },
+        {
+            "soft_skill_name": "answers capacity",
+            "id": 8
+        },
+        {
+            "soft_skill_name": "adaptability",
+            "id": 9
+        },
+        {
+            "soft_skill_name": "attention to details",
+            "id": 10
+        },
+        {
+            "soft_skill_name": "coworking",
+            "id": 11
+        },
+        {
+            "soft_skill_name": "conflict resolution",
+            "id": 12
+        },
+        {
+            "soft_skill_name": "creativity",
+            "id": 13
+        },
+        {
+            "soft_skill_name": "emotional intelligence",
+            "id": 14
+        },
+        {
+            "soft_skill_name": "patience",
+            "id": 15
+        },
+        {
+            "soft_skill_name": "work ethics",
+            "id": 16
+        },
+        {
+            "soft_skill_name": "self awareness",
+            "id": 17
+        },
+        {
+            "soft_skill_name": "strategic thinking",
+            "id": 18
+        }
+    ],
+    "programming-languages": [
+        {
+            "programming_language_name": "python",
+            "icon": "<i class='fa-brands fa-python'></i>",
+            "id": 1
+        },
+        {
+            "programming_language_name": "java",
+            "icon": "<i class='fa-brands fa-java'></i>",
+            "id": 2
+        },
+        {
+            "programming_language_name": "javascript",
+            "icon": "<i class='fa-brands fa-js'></i>",
+            "id": 3
+        },
+        {
+            "programming_language_name": "html",
+            "icon": "<i class='fa-brands fa-html5'></i>",
+            "id": 4
+        },
+        {
+            "programming_language_name": "css",
+            "icon": "<i class='fa-brands fa-css3'></i>",
+            "id": 5
+        },
+        {
+            "programming_language_name": "ruby",
+            "icon": "",
+            "id": 6
+        },
+        {
+            "programming_language_name": "r",
+            "icon": "",
+            "id": 7
+        },
+        {
+            "programming_language_name": "swift",
+            "icon": "",
+            "id": 8
+        },
+        {
+            "programming_language_name": "matlab",
+            "icon": "",
+            "id": 9
+        },
+        {
+            "programming_language_name": "scala",
+            "icon": "",
+            "id": 10
+        },
+        {
+            "programming_language_name": "c#",
+            "icon": "",
+            "id": 11
+        },
+        {
+            "programming_language_name": "go",
+            "icon": "",
+            "id": 12
+        },
+        {
+            "programming_language_name": "vba",
+            "icon": "",
+            "id": 13
+        },
+        {
+            "programming_language_name": "assembler",
+            "icon": "",
+            "id": 14
+        },
+        {
+            "programming_language_name": "kotlin",
+            "icon": "",
+            "id": 15
+        },
+        {
+            "programming_language_name": "perl",
+            "icon": "",
+            "id": 16
+        },
+        {
+            "programming_language_name": "rust",
+            "icon": "",
+            "id": 17
+        },
+        {
+            "programming_language_name": "pascal",
+            "icon": "",
+            "id": 18
+        },
+        {
+            "programming_language_name": "cobol",
+            "icon": "",
+            "id": 19
+        }
+    ],
+    "languages": [
+        {
+            "language_name": "english",
+            "id": 1
+        },
+        {
+            "language_name": "spanish",
+            "id": 2
+        },
+        {
+            "language_name": "german",
+            "id": 3
+        },
+        {
+            "language_name": "portuguese",
+            "id": 4
+        },
+        {
+            "language_name": "chinese",
+            "id": 5
+        },
+        {
+            "language_name": "russian",
+            "id": 6
+        },
+        {
+            "language_name": "french",
+            "id": 7
+        },
+        {
+            "language_name": "japanese",
+            "id": 8
+        },
+        {
+            "language_name": "italian",
+            "id": 9
+        }
+    ]
+}

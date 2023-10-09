@@ -1,0 +1,16 @@
+{
+  "name": "filtro-generador-cv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "json-server --watch api/data/db.json --port 5010 --routes api/data/routes.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "0.17.4"
+  }
+}
