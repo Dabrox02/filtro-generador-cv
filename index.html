@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css">
   <!-- Estilos CSS de AdminLTE -->
   <link rel="stylesheet" href="node_modules/admin-lte/dist/css/adminlte.min.css">
+  <!-- Estilos componente Multiselect -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/css/multi-select-tag.css">
   <!-- Estilos CSS Globales -->
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- jQuery -->
@@ -21,6 +23,8 @@
   <script src="node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js" defer></script>
   <!-- Scripts de AdminLTE -->
   <script src="node_modules/admin-lte/dist/js/adminlte.min.js" defer></script>
+  <!-- Scripts Componente Multiselect -->
+  <script src="https://cdn.jsdelivr.net/gh/habibmhamadi/multi-select-tag/dist/js/multi-select-tag.js" defer></script>
   <!-- Scripts Aplicacion -->
   <script src="index.js" defer type="module"></script>
 </head>
@@ -57,6 +61,110 @@
                   <h5 class="m-0">Crea Tu Curriculum</h5>
                 </div>
                 <div class="card-body">
+                  <form>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                          <label for="nameInput">Nombres</label>
+                          <input name="name_user" type="text" class="form-control" id="nameInput"
+                            aria-describedby="nameHelp" placeholder="Ingresa tu/s nombre/s">
+                          <small id="nameHelp" class="form-text text-muted">e.g Jaider Steeven</small>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                          <label for="surnameInput">Apellidos</label>
+                          <input name="surname_user" type="text" class="form-control" id="surnameInput"
+                            aria-describedby="surnameHelp" placeholder="Ingresa tu/s apellido/s">
+                          <small id="surnameHelp" class="form-text text-muted">e.g Mendoza Mendoza</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                          <label for="photoInput">Foto Personal</label>
+                          <input name="photo_user" type="text" class="form-control" id="photoInput"
+                            aria-describedby="photoHelp" placeholder="Ingresa la url de tu foto personal">
+                          <small id="photoHelp" class="form-text text-muted">e.g http://www.imagen.com</small>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                          <label for="titleInput">Titulo</label>
+                          <input name="photo_user" type="text" class="form-control" id="titleInput"
+                            aria-describedby="titleHelp" placeholder="Ingresa tu titulo">
+                          <small id="titleHelp" class="form-text text-muted">e.g Ingeniero de Software</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="descriptionInput">Descripción Personal</label>
+                          <textarea name="description_user" class="form-control" id="descriptionInput"
+                            aria-describedby="descriptionHelp" rows="3"></textarea>
+                          <small id="descriptionHelp" class="form-text text-muted">e.g Soy una persona...</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                          <label for="descriptionInput">Descripción Personal</label>
+                          <select name="countries" id="countries" multiple>
+                            <option value="1">Afghanistan</option>
+                            <option value="2">Australia</option>
+                            <option value="3">Germany</option>
+                            <option value="4">Canada</option>
+                            <option value="5">Russia</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="personalContactRow" class="row">
+                      <div class="col-12">
+                        <div class="form-group">
+                          <label for="descriptionInput">Contacto Personal</label>
+
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-outline-success">
+                              <span class="icon-plus">
+                                <i class="fa-plus"></i>
+                                </svg>
+                              </span>
+                              <span>Agregar Contacto</span>
+                            </button>
+                            <button type="button" class="btn btn-outline-danger">
+                              <span class="icon-plus">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+                                  <path
+                                    d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+                                </svg>
+                              </span>
+                              <span>Eliminar Contacto</span>
+                            </button>
+                          </div>
+
+                          <div class="row">
+                            <div class="col-6">
+                              <input name="photo_user" type="text" class="form-control" id="personalContactInput"
+                                aria-describedby="personalContactInput" placeholder="Ingresa tu contacto.">
+                            </div>
+                            <small id="photoHelp" class="form-text text-muted">e.g http://www.imagen.com</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Ha leído los terminos y condiciones</label>
+                    </div>
+                    <div class="row justify-content-end justify-content-md-start">
+                      <button type="submit" class="btn btn-primary">Crear Curriculum</button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
