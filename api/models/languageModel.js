@@ -8,7 +8,4 @@ const interfaz = {
 const language = crud({ endpoint, interfaz });
 export default language;
 
-// console.log(await language.getOne(25));
-console.log(await language.postOne({
-    "language_name": "null"
-}));
+// console.log(await language.getAll());
