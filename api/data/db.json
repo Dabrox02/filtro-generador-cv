@@ -1,84 +1,98 @@
 {
-  "curriculums": [],
+  "curriculums": [
+    {
+      "name_user": "Preston Tyler",
+      "surname_user": "Reed",
+      "description_user": "Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia.",
+      "photo_user": "",
+      "contact_user": [],
+      "laboral_experience_user": [],
+      "languages_user": [],
+      "soft_skills_user": [],
+      "hard_skills_user": [],
+      "programming_languages_user": [],
+      "id": 1
+    }
+  ],
   "hard-skills": [
     {
-      "hard-skill-name": "Programming",
+      "hard_skill_name": "Programming",
       "id": 1
     },
     {
-      "hard-skill-name": "Data Analysis",
+      "hard_skill_name": "Data Analysis",
       "id": 2
     },
     {
-      "hard-skill-name": "Web Development",
+      "hard_skill_name": "Web Development",
       "id": 3
     },
     {
-      "hard-skill-name": "Mobile App Development",
+      "hard_skill_name": "Mobile App Development",
       "id": 4
     },
     {
-      "hard-skill-name": "Network Administration",
+      "hard_skill_name": "Network Administration",
       "id": 5
     },
     {
-      "hard-skill-name": "Database Management",
+      "hard_skill_name": "Database Management",
       "id": 6
     },
     {
-      "hard-skill-name": "Cybersecurity",
+      "hard_skill_name": "Cybersecurity",
       "id": 7
     },
     {
-      "hard-skill-name": "Cloud Computing",
+      "hard_skill_name": "Cloud Computing",
       "id": 8
     },
     {
-      "hard-skill-name": "System Administration",
+      "hard_skill_name": "System Administration",
       "id": 9
     },
     {
-      "hard-skill-name": "Hardware Troubleshooting",
+      "hard_skill_name": "Hardware Troubleshooting",
       "id": 10
     },
     {
-      "hard-skill-name": "Software Testing",
+      "hard_skill_name": "Software Testing",
       "id": 11
     },
     {
-      "hard-skill-name": "Machine Learning",
+      "hard_skill_name": "Machine Learning",
       "id": 12
     },
     {
-      "hard-skill-name": "Artificial Intelligence",
+      "hard_skill_name": "Artificial Intelligence",
       "id": 13
     },
     {
-      "hard-skill-name": "Robotics",
+      "hard_skill_name": "Robotics",
       "id": 14
     },
     {
-      "hard-skill-name": "Data Mining",
+      "hard_skill_name": "Data Mining",
       "id": 15
     },
     {
-      "hard-skill-name": "Statistical Analysis",
+      "hard_skill_name": "Statistical Analysis",
       "id": 16
     },
     {
-      "hard-skill-name": "CAD/CAM",
+      "hard_skill_name": "CAD/CAM",
       "id": 17
     },
     {
-      "hard-skill-name": "3D Printing",
+      "hard_skill_name": "3D Printing",
       "id": 18
     },
     {
-      "hard-skill-name": "Digital Marketing",
+      "hard_skill_name": "Digital Marketing",
       "id": 19
     },
     {
-      "hard-skill-name": "Search Engine Optimization",
+      "hard_skill_name": "Search Engine Optimization",
       "id": 20
     }
   ],
