@@ -3,6 +3,7 @@ import programmingLanguage from "../api/models/programmingLanguageModel.js"
 import softSkill from "../api/models/softSkillModel.js"
 import hardSkill from "../api/models/hardSkillModel.js"
 import curriculum from "../api/models/curriculumModel.js"
+import { swalAlert } from "../components/swal-alert/swal-alert-component.js"
 
 // LOAD CONFIG 
 const configMultiSelect = (ele, options, placeholder) => {
@@ -156,7 +157,11 @@ export const formatFormData = ({ formData, selectsData }) => {
 
 export const sendDataForm = async (obj) => {
     let res = await curriculum.postOne(obj);
-    console.log(res);
+    if(res.status){
+        swalAlert({ type: "error", title: "No se pudo guardar", time: "2000" });
+    } else {
+        swalAlert({ type: "success", title: "Agregado con exito", time: "2000" });
+    }
 }
 
 const delSpecialChars = (texto) => {
