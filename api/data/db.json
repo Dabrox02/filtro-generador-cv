@@ -22,7 +22,7 @@
       "title_user": "Inge",
       "contact_user": [
         {
-          "name_contacto_user": "Linkedin",
+          "name_contact_user": "Linkedin",
           "contact_form_user": "linkendin.com"
         }
       ],
@@ -55,6 +55,81 @@
         4
       ],
       "id": 2
+    },
+    {
+      "name_user": "Juan",
+      "surname_user": "Torra",
+      "description_user": "Soy una persona alegre",
+      "photo_user": "",
+      "title_user": "Analista de Sistemas",
+      "contact_user": [
+        {
+          "name_contact_user": "LinkendIn",
+          "contact_form_user": "http://www.linkedin.com"
+        },
+        {
+          "name_contact_user": "gmail",
+          "contact_form_user": "http://www.gmail.com"
+        }
+      ],
+      "laboral_experience_user": [
+        {
+          "position_experience": "Ingeniero TI",
+          "laboral_experience": "Diseño de infraestructura TI"
+        }
+      ],
+      "languages_user": [
+        1,
+        2
+      ],
+      "soft_skills_user": [
+        1
+      ],
+      "hard_skills_user": [
+        1,
+        4
+      ],
+      "programming_languages_user": [
+        1,
+        3,
+        2,
+        4,
+        5
+      ],
+      "id": 3
+    },
+    {
+      "name_user": "Johan",
+      "surname_user": "Pachon",
+      "description_user": "Soy una persona competitiva y disciplinada",
+      "photo_user": "",
+      "title_user": "Ingeniero",
+      "contact_user": [
+        {
+          "name_contact_user": "Gmail",
+          "contact_form_user": "pachon@gmail.com"
+        }
+      ],
+      "laboral_experience_user": [
+        {
+          "position_experience": "Experiencia laboral",
+          "laboral_experience": "Apoyo tecnico al ciclo del proyecto"
+        }
+      ],
+      "languages_user": [
+        5,
+        4,
+        3
+      ],
+      "soft_skills_user": [
+        8
+      ],
+      "hard_skills_user": [],
+      "programming_languages_user": [
+        11,
+        14
+      ],
+      "id": 4
     }
   ],
   "hard-skills": [

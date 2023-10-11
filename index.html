@@ -13,6 +13,10 @@
   <link rel="stylesheet" href="node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css">
   <!-- Estilos CSS de AdminLTE -->
   <link rel="stylesheet" href="node_modules/admin-lte/dist/css/adminlte.min.css">
+  <!-- Estilos DataTable -->
+  <link rel="stylesheet" href="../node_modules/admin-lte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet"
+    href="../node_modules/admin-lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <!-- Estilos componente Multiselect -->
   <link rel="stylesheet" href="components/multi-select-component/virtual-select.min.css">
   <!-- Estilos CSS Globales -->
@@ -27,6 +31,11 @@
   <script src="components/multi-select-component/virtual-select.min.js"></script>
   <!-- Scripts SweetAlert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <!-- jQuery DataTable -->
+  <script src="../node_modules/admin-lte/plugins/datatables/jquery.dataTables.min.js" defer></script>
+  <script src="../node_modules/admin-lte/plugins/datatables-responsive/js/dataTables.responsive.min.js" defer></script>
+  <!-- DataTables Script -->
+  <script src="../node_modules/admin-lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js" defer></script>
   <!-- Scripts Iocons -->
   <script type="module" src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule="" src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.js"></script>
@@ -58,211 +67,240 @@
       <!-- Main content -->
       <div class="content">
         <div class="container-fluid">
+
+          <!-- Tabla Curriculums -->
           <div class="row">
-            <!-- Card -->
-            <div class="col-12">
-              <div class="card">
-                <div class="card-header">
-                  <h5 class="m-0">Crea Tu Curriculum</h5>
-                </div>
-                <div class="card-body">
-                  <form id="curriculum-form">
-                    <!-- Informacion Personal -->
-                    <div class="row">
-                      <div class="col-md-6 col-sm-12">
-                        <div class="form-group">
-                          <label for="nameInput">Nombres</label>
-                          <input name="name_user" type="text" class="form-control" id="nameInput"
-                            aria-describedby="nameHelp" placeholder="Ingresa tu/s nombre/s.">
-                          <small id="nameHelp" class="form-text text-muted">e.g Jaider Steeven</small>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-sm-12">
-                        <div class="form-group">
-                          <label for="surnameInput">Apellidos</label>
-                          <input name="surname_user" type="text" class="form-control" id="surnameInput"
-                            aria-describedby="surnameHelp" placeholder="Ingresa tu/s apellido/s.">
-                          <small id="surnameHelp" class="form-text text-muted">e.g Mendoza Mendoza</small>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-6 col-sm-12">
-                        <div class="form-group">
-                          <label for="photoInput">Foto Personal</label>
-                          <input name="photo_user" type="text" class="form-control" id="photoInput"
-                            aria-describedby="photoHelp" placeholder="Ingresa la url de tu foto personal">
-                          <small id="photoHelp" class="form-text text-muted">e.g http://www.imagen.com</small>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-sm-12">
-                        <div class="form-group">
-                          <label for="titleInput">Titulo</label>
-                          <input name="title_user" type="text" class="form-control" id="titleInput"
-                            aria-describedby="titleHelp" placeholder="Ingresa tu titulo.">
-                          <small id="titleHelp" class="form-text text-muted">e.g Ingeniero de Software</small>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12">
-                        <div class="form-group">
-                          <label for="descriptionInput">Descripción Personal</label>
-                          <textarea name="description_user" class="form-control" id="descriptionInput"
-                            aria-describedby="descriptionHelp" rows="3"></textarea>
-                          <small id="descriptionHelp" class="form-text text-muted">e.g Soy una persona...</small>
-                        </div>
-                      </div>
-                    </div>
+            <div class="px-3 mb-3">
+              <table id="table-curriculums" class="table table-striped table-responsive">
+                <thead class="table-dark text-center">
+                  <tr>
+                    <th>ID</th>
+                    <th>Nombre Completo</th>
+                    <th>Titulo</th>
+                    <th>Descripcion</th>
+                    <th>Foto Personal</th>
+                    <th>Funciones</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
 
-                    <!-- Idiomas -->
-                    <div class="row">
-                      <div class="col-md-6 col-sm-12">
-                        <div class="form-group">
-                          <label>Idiomas</label>
-                          <div id="multi-select-languages">
-                            <select id="languageInput" multiple name="native-select" data-search="false"
-                              data-silent-initial-value-set="true">
-                            </select>
+          <!-- Card Form -->
+          <div class="row">
+            <div class="d-block pb-3">
+              <button id="btn-collapse-form-curriculum" class="btn btn-outline-primary" type="button"
+                data-toggle="collapse" data-target="#collapseFormCurriculum" aria-expanded="false"
+                aria-controls="collapseFormCurriculum">
+                Crear Curriculum
+              </button>
+            </div>
+
+            <div class="card w-100">
+              <div class="col-12">
+                <div>
+                  <div class="card-header">
+                    <h5 id="title-card" class="m-0">Crea Tu Curriculum</h5>
+                  </div>
+                  <div id="collapseFormCurriculum" class="card-body collapse">
+                    <!-- Form -->
+                    <form id="curriculum-form">
+                      <!-- Informacion Personal -->
+                      <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                          <div class="form-group">
+                            <label for="nameInput">Nombres</label>
+                            <input name="name_user" type="text" class="form-control" id="nameInput"
+                              aria-describedby="nameHelp" placeholder="Ingresa tu/s nombre/s.">
+                            <small id="nameHelp" class="form-text text-muted">e.g Jaider Steeven</small>
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                          <div class="form-group">
+                            <label for="surnameInput">Apellidos</label>
+                            <input name="surname_user" type="text" class="form-control" id="surnameInput"
+                              aria-describedby="surnameHelp" placeholder="Ingresa tu/s apellido/s.">
+                            <small id="surnameHelp" class="form-text text-muted">e.g Mendoza Mendoza</small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                          <div class="form-group">
+                            <label for="photoInput">Foto Personal</label>
+                            <input name="photo_user" type="text" class="form-control" id="photoInput"
+                              aria-describedby="photoHelp" placeholder="Ingresa la url de tu foto personal">
+                            <small id="photoHelp" class="form-text text-muted">e.g http://www.imagen.com</small>
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                          <div class="form-group">
+                            <label for="titleInput">Titulo</label>
+                            <input name="title_user" type="text" class="form-control" id="titleInput"
+                              aria-describedby="titleHelp" placeholder="Ingresa tu titulo.">
+                            <small id="titleHelp" class="form-text text-muted">e.g Ingeniero de Software</small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="form-group">
+                            <label for="descriptionInput">Descripción Personal</label>
+                            <textarea name="description_user" class="form-control" id="descriptionInput"
+                              aria-describedby="descriptionHelp" rows="3"></textarea>
+                            <small id="descriptionHelp" class="form-text text-muted">e.g Soy una persona...</small>
                           </div>
                         </div>
                       </div>
 
-                      <!-- Lenguajes de Programacion -->
-                      <div class="col-md-6 col-sm-12">
-                        <div class="form-group">
-                          <label>Lenguajes de Programacion</label>
-                          <div id="multi-select-programming">
-                            <select id="programmingInput" multiple name="native-select" data-search="false"
-                              data-silent-initial-value-set="true">
-                            </select>
+                      <!-- Idiomas -->
+                      <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                          <div id="select-languages" class="form-group">
+                            <label>Idiomas</label>
+                            <!-- <div id="multi-select-languages">
+                              <select id="languageInput" multiple name="native-select" data-search="false">
+                              </select>
+                            </div> -->
                           </div>
                         </div>
-                      </div>
 
-                      <!-- Soft Skills -->
-                      <div class="col-md-6 col-sm-12">
-                        <div class="form-group">
-                          <label>Soft Skills</label>
-                          <div id="multi-select-soft-skill">
-                            <select id="softSkillInput" multiple name="native-select" data-search="false"
-                              data-silent-initial-value-set="true">
-                            </select>
+                        <!-- Lenguajes de Programacion -->
+                        <div class="col-md-6 col-sm-12">
+                          <div id="select-programming" class="form-group">
+                            <label>Lenguajes de Programacion</label>
+                            <!-- <div id="multi-select-programming">
+                              <select id="programmingInput" multiple name="native-select" data-search="false"
+                                data-silent-initial-value-set="true">
+                              </select>
+                            </div> -->
                           </div>
                         </div>
-                      </div>
 
-                      <!-- Hard Skills -->
-                      <div class="col-md-6 col-sm-12">
-                        <div class="form-group">
-                          <label>Hard Skills</label>
-                          <div id="multi-select-hard-skill">
-                            <select id="hardSkillInput" multiple name="native-select" data-search="false"
-                              data-silent-initial-value-set="true">
-                            </select>
+                        <!-- Soft Skills -->
+                        <div class="col-md-6 col-sm-12">
+                          <div id="select-soft-skill" class="form-group">
+                            <label>Soft Skills</label>
+                            <!-- <div id="multi-select-soft-skill">
+                              <select id="softSkillInput" multiple name="native-select" data-search="false"
+                                data-silent-initial-value-set="true">
+                              </select>
+                            </div> -->
                           </div>
                         </div>
+
+                        <!-- Hard Skills -->
+                        <div class="col-md-6 col-sm-12">
+                          <div id="select-hard-skill" class="form-group">
+                            <label>Hard Skills</label>
+                            <!-- <div id="multi-select-hard-skill">
+                              <select id="hardSkillInput" multiple name="native-select" data-search="false"
+                                data-silent-initial-value-set="true">
+                              </select>
+                            </div> -->
+                          </div>
+                        </div>
+
                       </div>
 
-                    </div>
-
-                    <div id="personalContactRow" class="row">
-                      <div class="col-12">
-                        <!-- Button Group -->
-                        <div class="form-group">
-                          <label for="descriptionInput">Contacto Personal</label>
-                          <div class="py-2">
-                            <div class="btn-group">
-                              <button type="button" class="btn btn-outline-success" id="btn-add-contact">
-                                <ion-icon name="add-outline"></ion-icon>
-                                <span>Agregar Contacto</span>
-                              </button>
-                              <button type="button" class="btn btn-outline-danger" id="btn-del-contact">
-                                <ion-icon name="trash-outline"></ion-icon>
-                                <span>Eliminar Contacto</span>
-                              </button>
+                      <div id="personalContactRow" class="row">
+                        <div class="col-12">
+                          <!-- Button Group -->
+                          <div class="form-group">
+                            <label for="descriptionInput">Contacto Personal</label>
+                            <div class="py-2">
+                              <div class="btn-group">
+                                <button type="button" class="btn btn-outline-success" id="btn-add-contact">
+                                  <ion-icon name="add-outline"></ion-icon>
+                                  <span>Agregar Contacto</span>
+                                </button>
+                                <button type="button" class="btn btn-outline-danger" id="btn-del-contact">
+                                  <ion-icon name="trash-outline"></ion-icon>
+                                  <span>Eliminar Contacto</span>
+                                </button>
+                              </div>
                             </div>
-                          </div>
-                          <!-- Contactos -->
-                          <div id="grid-contact-user" class="row py-1 border-bottom my-1">
-                            <div class="col-12 contact-user" data-ncontact="1">
-                              <div class="form-group row">
-                                <div class="col-md-6 col-sm-12">
-                                  <input name="name_contacto_user_1" type="text" class="form-control"
-                                    id="nameContactInput" aria-describedby="nameSocialNetHelp"
-                                    placeholder="Nombre Red Social.">
-                                  <small id="nameSocialNetHelp" class="form-text text-muted">e.g LinkedIn /
-                                    Gmail</small>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                  <input name="contact_form_user_1" type="text" class="form-control"
-                                    id="urlContactInput" aria-describedby="contactFormInputHelp"
-                                    placeholder="Ingresa tu contacto.">
-                                  <small id="contactFormInputHelp" class="form-text text-muted">e.g
-                                    http://www.linkedin.com / example@gmail.com</small>
+                            <!-- Contactos -->
+                            <div id="grid-contact-user" class="row py-1 border-bottom my-1">
+                              <div class="col-12 contact-user" data-ncontact="1">
+                                <div class="form-group row">
+                                  <div class="col-md-6 col-sm-12">
+                                    <input name="name_contact_user_1" type="text" class="form-control"
+                                      id="nameContactInput1" aria-describedby="nameSocialNetHelp"
+                                      placeholder="Nombre Red Social.">
+                                    <small id="nameSocialNetHelp" class="form-text text-muted">e.g LinkedIn /
+                                      Gmail</small>
+                                  </div>
+                                  <div class="col-md-6 col-sm-12">
+                                    <input name="contact_form_user_1" type="text" class="form-control"
+                                      id="urlContactInput1" aria-describedby="contactFormInputHelp"
+                                      placeholder="Ingresa tu contacto.">
+                                    <small id="contactFormInputHelp" class="form-text text-muted">e.g
+                                      http://www.linkedin.com / example@gmail.com</small>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div id="laboralExperienceRow" class="row">
-                      <div class="col-12">
-                        <!-- Button Group -->
-                        <div class="form-group">
-                          <label for="descriptionInput">Experiencia Laboral</label>
-                          <div class="py-2">
-                            <div class="btn-group">
-                              <button type="button" class="btn btn-outline-success" id="btn-add-experience">
-                                <ion-icon name="add-outline"></ion-icon>
-                                <span>Agregar Experiencia</span>
-                              </button>
-                              <button type="button" class="btn btn-outline-danger" id="btn-del-experience">
-                                <ion-icon name="trash-outline"></ion-icon>
-                                <span>Eliminar Experiencia</span>
-                              </button>
+                      <div id="laboralExperienceRow" class="row">
+                        <div class="col-12">
+                          <!-- Button Group -->
+                          <div class="form-group">
+                            <label for="descriptionInput">Experiencia Laboral</label>
+                            <div class="py-2">
+                              <div class="btn-group">
+                                <button type="button" class="btn btn-outline-success" id="btn-add-experience">
+                                  <ion-icon name="add-outline"></ion-icon>
+                                  <span>Agregar Experiencia</span>
+                                </button>
+                                <button type="button" class="btn btn-outline-danger" id="btn-del-experience">
+                                  <ion-icon name="trash-outline"></ion-icon>
+                                  <span>Eliminar Experiencia</span>
+                                </button>
+                              </div>
                             </div>
-                          </div>
-                          <!-- Experiencia laboral -->
-                          <div id="grid-experience-user" class="row py-1 border-bottom my-1">
-                            <div class="col-12 experience-user" data-nexperience="1">
-                              <div class="form-group row">
-                                <div class="col-md-6 col-sm-12">
-                                  <input name="position_experience_1" type="text" class="form-control"
-                                    id="positionExperienceInput" aria-describedby="positionCompanyHelp"
-                                    placeholder="Posicion que ocupaste en la compañia.">
-                                  <small id="positionCompanyHelp" class="form-text text-muted">e.g Desarrollador
-                                    web...</small>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                  <input name="laboral_experience_1" type="text" class="form-control"
-                                    id="laboralExperienceInput" aria-describedby="nameSocialNetHelp"
-                                    placeholder="Cuenta tu experiencia laboral.">
-                                  <small id="nameSocialNetHelp" class="form-text text-muted">e.g Apoyo tecnico al ciclo
-                                    del proyecto...</small>
+                            <!-- Experiencia laboral -->
+                            <div id="grid-experience-user" class="row py-1 border-bottom my-1">
+                              <div class="col-12 experience-user" data-nexperience="1">
+                                <div class="form-group row">
+                                  <div class="col-md-6 col-sm-12">
+                                    <input name="position_experience_1" type="text" class="form-control"
+                                      id="positionExperienceInput1" aria-describedby="positionCompanyHelp"
+                                      placeholder="Posicion que ocupaste en la compañia.">
+                                    <small id="positionCompanyHelp" class="form-text text-muted">e.g Desarrollador
+                                      web...</small>
+                                  </div>
+                                  <div class="col-md-6 col-sm-12">
+                                    <input name="laboral_experience_1" type="text" class="form-control"
+                                      id="laboralExperienceInput1" aria-describedby="nameSocialNetHelp"
+                                      placeholder="Cuenta tu experiencia laboral.">
+                                    <small id="nameSocialNetHelp" class="form-text text-muted">e.g Apoyo tecnico al
+                                      ciclo
+                                      del proyecto...</small>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
 
-
-                    <div class="form-group form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Ha leído los terminos y condiciones</label>
-                    </div>
-                    <div class="row justify-content-end justify-content-md-start">
-                      <button type="submit" class="btn btn-primary">Crear Curriculum</button>
-                    </div>
-                  </form>
+                      <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Ha leído los terminos y
+                          condiciones</label>
+                      </div>
+                      <div class="row justify-content-end justify-content-md-start">
+                        <button id="sendData" type="submit" class="btn btn-primary">Crear Curriculum</button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>

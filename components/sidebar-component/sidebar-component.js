@@ -36,12 +36,6 @@ export class SidebarComponent extends HTMLElement {
                   <p> Inicio </p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="${config.uri}/views/curriculums.html" class="nav-link">
-                  <i class="nav-icon far fa-image"></i>
-                  <p> Curriculums </p>
-                </a>
-              </li>
             </ul>
           </nav>
           <!-- /.sidebar-menu -->
