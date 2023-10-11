@@ -13,6 +13,48 @@
       "contact_user": [],
       "laboral_experience_user": [],
       "id": 1
+    },
+    {
+      "name_user": "Jaider",
+      "surname_user": "Mendoza",
+      "description_user": "Soy profesional",
+      "photo_user": "https://www.periodico15.com/wp-content/uploads/2022/12/cumb-1-.jpg",
+      "title_user": "Inge",
+      "contact_user": [
+        {
+          "name_contacto_user": "Linkedin",
+          "contact_form_user": "linkendin.com"
+        }
+      ],
+      "laboral_experience_user": [
+        {
+          "position_experience": "Desarrollador web",
+          "laboral_experience": "apoyo tecnico"
+        }
+      ],
+      "languages_user": [
+        1,
+        2
+      ],
+      "soft_skills_user": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "hard_skills_user": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "programming_languages_user": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "id": 2
     }
   ],
   "hard-skills": [

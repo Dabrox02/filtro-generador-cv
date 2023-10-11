@@ -56,12 +56,24 @@ const putOne = async ({ endpoint, interfaz, obj }) => {
     }
 }
 
+const delOne = async ({ endpoint, id }) => {
+    try {
+        if (!id) return { status: 400, message: "Not Id Found" };
+        return await (await fetch(`${config.uri}${endpoint}/${id}`, {
+            method: "DELETE"
+        })).json();
+    } catch (e) {
+        return { status: 400, message: e.message }
+    }
+}
+
 
 const crud = ({ endpoint, interfaz }) => ({
     getAll: async () => await getAll({ endpoint }),
     getOne: async (id) => await getOne({ endpoint, id }),
     postOne: async (obj) => await postOne({ endpoint, interfaz, obj }),
-    putOne: async (obj) => await putOne({ endpoint, interfaz, obj })
+    putOne: async (obj) => await putOne({ endpoint, interfaz, obj }),
+    delOne: async (id) => await delOne({ endpoint, id })
 });
 
 export default crud;
