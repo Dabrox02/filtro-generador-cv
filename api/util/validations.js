@@ -12,7 +12,7 @@ export const isURL = (url) => {
 }
 
 export const isCampoValido = ({ campo, valor, tipoEsperado }) => {
-    if (valor === undefined || valor === null) throw new Error(`Undefined field`);
+    if (valor === undefined || valor === null) throw new Error(`Undefined field: ${campo}`);
     if (tipoEsperado == "date") {
         if (isNaN(new Date(valor).getTime())) throw new Error(`Field: ${campo} - Value: ${valor} Does NOT correspond a DATE`);
         return { [campo]: new Date(valor).toISOString().split('T')[0] };

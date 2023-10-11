@@ -5,13 +5,13 @@
       "surname_user": "Reed",
       "description_user": "Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia.",
       "photo_user": "",
-      "title": "",
-      "contact_user": [],
-      "laboral_experience_user": [],
-      "soft_skills_user": [],
+      "title_user": "",
       "languages_user": [],
+      "soft_skills_user": [],
       "hard_skills_user": [],
       "programming_languages_user": [],
+      "contact_user": [],
+      "laboral_experience_user": [],
       "id": 1
     }
   ],

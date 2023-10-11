@@ -6,7 +6,7 @@ const interfaz = {
     "surname_user": "string",
     "description_user": "string",
     "photo_user": "url",
-    "title_user": "",
+    "title_user": "string",
     "contact_user": "array",
     "laboral_experience_user": "array",
     "languages_user": "array",
