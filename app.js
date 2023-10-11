@@ -105,12 +105,15 @@ export const app = async () => {
     const imgTmp = "https://img.icons8.com/?size=256&id=108652&format=png";
     console.log(await getCurriculums());
     dtRows.forEach((e) => {
-        dt.row.add([
-            e.id, 
-            `${e.name_user} ${e.surname_user}`, 
-            e.title_user, 
-            /*html*/`<img src="${e.photo_user ? e.photo_user : imgTmp}" alt="${e.name_user}" class="img-thumbnail photo_user">`,
-            /*html*/`
+      dt.row
+        .add([
+          e.id,
+          `${e.name_user} ${e.surname_user}`,
+          e.title_user,
+          /*html*/ `<img src="${e.photo_user ? e.photo_user : imgTmp}" alt="${
+            e.name_user
+          }" class="img-thumbnail photo_user">`,
+          /*html*/ `
             <div class="row justify-content-center">
                 <div class="p-1">
                     <button id="btn-edit-curriculum" class="btn btn-primary" type="button" data-edit="${e.id}">Editar</button>
@@ -118,9 +121,9 @@ export const app = async () => {
                 <div class="p-1">
                     <button id="btn-del-curriculum" class="btn btn-danger" type="button" data-del="${e.id}">Eliminar</button>
                 </div>
-            </div>`
-        ]).draw();
-    })
-    
+            </div>`,
+        ])
+        .draw();
+    });
   }
 };
