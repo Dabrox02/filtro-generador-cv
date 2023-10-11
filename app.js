@@ -1,6 +1,4 @@
-import config from "./config.js";
-// import language from "./api/models/languageModel.js"
-import { getInitLanguagesMultiSelect, getInitProgrammingMultiSelect, getInitSoftSkillMultiSelect, getInitHardSkillMultiSelect, addContactInputs, addExperienceInputs, delInputs } from "./modules/formCurriculum.js";
+import { getInitLanguagesMultiSelect, getInitProgrammingMultiSelect, getInitSoftSkillMultiSelect, getInitHardSkillMultiSelect, addContactInputs, addExperienceInputs, delInputs, formatFormData, sendDataForm } from "./modules/formCurriculum.js";
 
 const d = document;
 const $ = (e) => d.querySelector(e);
@@ -26,14 +24,6 @@ export const app = async () => {
         VirtualSelect.init(softSkillSelect);
         VirtualSelect.init(hardSkillSelect);
 
-        d.addEventListener("submit", (e) => {
-            e.preventDefault();
-            if (e.target.matches("#curriculum-form")) {
-                console.log(Object.fromEntries(new FormData($("#curriculum-form"))));
-                console.log($("#multi-select").value);
-            }
-        })
-
         d.addEventListener("click", (e) => {
 
             if (e.target.matches("#btn-add-contact, #btn-add-contact *")) {
@@ -49,7 +39,23 @@ export const app = async () => {
             if (e.target.matches("#btn-del-experience, #btn-del-experience *")) {
                 delInputs({ elementsInputs: [...$a(".experience-user")], elementHTML: $("#grid-experience-user"), dataAttribute: "nexperience" });
             }
+        })
 
+        d.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            if (e.target.matches("#curriculum-form")) {
+                console.log(Object.fromEntries(new FormData($("#curriculum-form"))));
+                let formatData = formatFormData({
+                    formData: Object.fromEntries(new FormData($("#curriculum-form"))),
+                    selectsData: {
+                        "languages_user": [...$("#multi-select-languages").value],
+                        "programming_languages_user": [...$("#multi-select-programming").value],
+                        "soft_skills_user": [...$("#multi-select-soft-skill").value],
+                        "hard_skills_user": [...$("#multi-select-hard-skill").value]
+                    }
+                });
+                await sendDataForm(formatData);
+            }
         })
     }
 }

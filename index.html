@@ -25,7 +25,9 @@
   <script src="node_modules/admin-lte/dist/js/adminlte.min.js" defer></script>
   <!-- Scripts Componente Multiselect -->
   <script src="components/multi-select-component/virtual-select.min.js"></script>
-  <!-- Iocons -->
+  <!-- Scripts SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <!-- Scripts Iocons -->
   <script type="module" src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule="" src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.js"></script>
   <!-- Scripts Aplicacion -->
@@ -189,13 +191,15 @@
                                   <input name="name_contacto_user_1" type="text" class="form-control"
                                     id="nameContactInput" aria-describedby="nameSocialNetHelp"
                                     placeholder="Nombre Red Social.">
-                                  <small id="nameSocialNetHelp" class="form-text text-muted">e.g LinkedIn</small>
+                                  <small id="nameSocialNetHelp" class="form-text text-muted">e.g LinkedIn /
+                                    Gmail</small>
                                 </div>
                                 <div class="col-md-6 col-sm-12">
-                                  <input name="url_contact_user_1" type="url" class="form-control" id="urlContactInput"
-                                    aria-describedby="urlSocialNetHelp" placeholder="Ingresa tu contacto.">
-                                  <small id="urlSocialNetHelp" class="form-text text-muted">e.g
-                                    http://www.linkedin.com</small>
+                                  <input name="contact_form_user_1" type="text" class="form-control"
+                                    id="urlContactInput" aria-describedby="contactFormInputHelp"
+                                    placeholder="Ingresa tu contacto.">
+                                  <small id="contactFormInputHelp" class="form-text text-muted">e.g
+                                    http://www.linkedin.com / example@gmail.com</small>
                                 </div>
                               </div>
                             </div>
