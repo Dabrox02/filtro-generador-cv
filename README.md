@@ -3,10 +3,10 @@
 
 # Proyecto Prestamo Libreria
 Este proyecto consiste en la integración de las tecnologias aprendidas con el fin de crear una aplicacion web de gestion de libros, usando json-server como api.
-
+****
 ## Tecnologias utilizadas
 Para la concepción del proyecto se hizo uso de las siguientes tecnologias, las cuales se integraron para crear el proyecto:
-
+****
 - HTML (HyperText Markup Language)
 - CSS (Cascading Style Sheets)
 - Bootstrap
@@ -22,6 +22,7 @@ Hay algunos requisitos y consideraciones que el cliente debe tener en cuenta par
   - [Mozilla Firefox](https://www.mozilla.org/es-ES/firefox/new/)
   - [Google Chrome](https://www.google.com/chrome/)
 
+****
 ## Estructura del Proyecto
 ```
 +---api           // Logica de la API
@@ -52,6 +53,7 @@ Hay algunos requisitos y consideraciones que el cliente debe tener en cuenta par
 +---README.md
 ```
 
+****
 ## Guía de Instalación y Configuración de json-server
 ### Requisitos previos:
 - **NVM** es una herramienta que te permite administrar múltiples versiones de Node.js en tu máquina.
@@ -113,9 +115,20 @@ En tu terminal, ejecuta `json-server` y especifica el archivo JSON que deseas ut
 ```bash
 json-server --watch db.json --port <port>
 ```
+<a name="clonar-repositorio"></a>
+
+## Clonar este Repositorio
+
+Para clonar este repositorio debes tener instalada la herramienta de [**GIT**](https://git-scm.com/), y ejecutar el siguiente comando:
+
+```bash
+git clone https://github.com/Dabrox02/filtro-generador-cv.git
+```
+
+_Debes tener permisos para clonar este repositorio_
 
 ## Inicializacion del proyecto
-**Si clonas este repositorio**, debes utilizar el siguiente comando para instalar las dependencias necesarias:
+[**Si clonas este repositorio**](#clonar-repositorio), debes utilizar el siguiente comando para instalar las dependencias necesarias:
 ```bash
 npm install
 ```
@@ -162,4 +175,67 @@ De clic en el boton **CREAR CURRICULUM** en la parte inferior de la seccion de *
 <div align="center">
   <h3>Paso 1</h3>
   <img src="readmeAssets/agregar_informacion_1.png" style="width: 1000px">
+  <h3>Paso 2</h3>
+  <img src="readmeAssets/agregar_informacion_2.png" style="width: 1000px">
+  <h3>Resultado</h3>
+  <img src="readmeAssets/agregar_informacion_3.png" style="width: 1000px">
 </div>
+
+
+### Como Editar un Curriculum
+De clic en el boton **EDITAR** correspondiente al curriculum de la tabla que desea editar, se abrira un formulario donde ingresara los datos correspondientes, luego, de clic en el boton de **EDITAR CURRICULUM** del formulario, si todos los datos fueron correctos se abrira un mensaje de exito o por el contrario, un mensaje de error.
+
+<div align="center">
+  <h3>Paso 1</h3>
+  <img src="readmeAssets/editar_informacion_1.png" style="width: 1000px">
+  <h3>Paso 2</h3>
+  <img src="readmeAssets/editar_informacion_2.png" style="width: 1000px">
+  <h3>Resultado</h3>
+  <img src="readmeAssets/editar_informacion_3.png" style="width: 1000px">
+</div>
+
+
+### Como Eliminar un Curriculum
+De clic en el boton **ELIMINAR** correspondiente al curriculum de la tabla que desea eliminar, si la operacion es correcta, se eliminara con exito, en caso contrario, lanzara un mensaje de error.
+
+<div align="center">
+  <h3>Paso 1</h3>
+  <img src="readmeAssets/eliminar_informacion_1.png" style="width: 1000px">
+  <h3>Resultado</h3>
+  <img src="readmeAssets/eliminar_informacion_2.png" style="width: 1000px">
+</div>
+
+
+### Como Buscar un Curriculum
+De clic en el campo **SEARCH** correspondiente a la tabla de curriculums, e ingrese la informacion de que desea buscar.
+
+<div align="center">
+  <h3>Paso 1</h3>
+  <img src="readmeAssets/buscar_informacion_1.png" style="width: 1000px">
+  <h3>Resultado</h3>
+  <img src="readmeAssets/buscar_informacion_2.png" style="width: 1000px">
+</div>
+
+
+<a name="como-visualizar-un-curriculum"></a>
+
+### Como Visualizar un Curriculum
+De clic en el boton **VER** correspondiente al curriculum de la tabla que desea ver, aparecera en pantalla de inmediato el curriculum con los datos del usuario.
+
+<div align="center">
+  <h3>Paso 1</h3>
+  <img src="readmeAssets/ver_informacion_1.png" style="width: 1000px">
+  <h3>Resultado</h3>
+  <img src="readmeAssets/ver_informacion_2.png" style="width: 1000px">
+</div>
+
+### Como Descargar un Curriculum
+Realiza el paso de la seccion [Como Visualizar un Curriculum](#como-visualizar-un-curriculum). Encontraras dos botones, **DESCARGAR PDF** o **DESCARGAR PNG**, selecciona la opcion que desees.
+
+<div align="center">
+  <h3>Paso 1</h3>
+  <img src="readmeAssets/descargar_informacion_1.png" style="width: 1000px">
+  <h3>Resultado</h3>
+  <img src="readmeAssets/descargar_informacion_2.png" style="width: 1000px">
+</div>
+
