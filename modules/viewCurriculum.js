@@ -15,11 +15,6 @@ export const createCurriculum = async (id) => {
     let langs = await Promise.all(cus.languages_user.map(async (id) => await language.getOne(id)));
     let prolangs = await Promise.all(cus.programming_languages_user.map(async (id) => await programmingLanguage.getOne(id)));
 
-    console.log(softuser);
-    console.log(harduser);
-    console.log(langs);
-    console.log(prolangs);
-
     $("#main-content").removeChild($("#crud-content"));
     $("#main-content").insertAdjacentHTML("beforeend", /*html*/`
     <div class="content">
