@@ -1,8 +1,176 @@
-table .photo_user{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+table .photo_user {
     border-radius: 50%;
     width: 72px;
     height: 72px;
     display: block;
     margin: 0 auto;
     object-fit: cover;
+}
+
+#sendData {
+    font-size: 1.2rem;
+}
+
+/*  CURRICULUM ESTILOS */
+
+#main-curriculum[data-action="curriculum"] {
+    font-family: 'Poppins', sans-serif;
+    max-width: 816px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#main-curriculum[data-action="curriculum"] ul,
+#main-curriculum[data-action="curriculum"] li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#main-curriculum[data-action="curriculum"] h1 {
+    font-weight: 500;
+    display: block;
+    text-align: end;
+}
+
+#main-curriculum[data-action="curriculum"] h2 {
+    font-weight: 300;
+    display: block;
+    text-align: end;
+}
+
+#main-curriculum[data-action="curriculum"] h3 {
+    display: block;
+    text-align: center;
+}
+
+/* LADO IZQUIERDO */
+#main-curriculum[data-action="curriculum"] #left-side {
+    padding-bottom: 2rem;
+    width: 100%;
+    background-color: #003147;
+    color: white;
+}
+
+#main-curriculum[data-action="curriculum"] #photo-user img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    display: block;
+    margin: 40px auto 0;
+    object-fit: cover;
+    background-color: white;
+}
+
+#main-curriculum[data-action="curriculum"] #description-user {
+    font-weight: 300;
+    padding: 2rem;
+    text-align: center;
+}
+
+#main-curriculum[data-action="curriculum"] #description-user p {
+    max-width: 500px;
+    margin: auto;
+}
+
+#main-curriculum[data-action="curriculum"] #contact-user {
+    padding: 0 2rem;
+}
+
+#main-curriculum[data-action="curriculum"] #contact-user .contact ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#main-curriculum[data-action="curriculum"] #contact-user .contact .name-contact {
+    font-weight: 500;
+}
+
+#main-curriculum[data-action="curriculum"] #contact-user .contact .name-contact::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/icon-contact.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    vertical-align: middle;
+    padding: 0 1rem;
+}
+
+#main-curriculum[data-action="curriculum"] #contact-user .contact .url-contact {
+    overflow: auto;
+    white-space: pre-wrap;
+}
+
+
+/* LADO DERECHO */
+#main-curriculum[data-action="curriculum"] #right-side {
+    width: 100%;
+    padding: 2rem;
+}
+
+#main-curriculum[data-action="curriculum"] #header-user {
+    text-transform: uppercase;
+    padding-bottom: 3rem;
+}
+
+#main-curriculum[data-action="curriculum"] #header-user #name-user {
+    position: relative;
+}
+
+#main-curriculum[data-action="curriculum"] #header-user #name-user::after {
+    content: "";
+    display: inline-block;
+    width: 35%;
+    height: 6px;
+    background-color: black;
+    position: absolute;
+    right: 0;
+}
+
+#main-curriculum[data-action="curriculum"] #other-information {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+
+#main-curriculum[data-action="curriculum"] .skill {
+    text-transform: capitalize;
+}
+
+#main-curriculum[data-action="curriculum"] #laboral-experience .experience ul {
+    text-align: center;
+    border-radius: 2px;
+    border-top: 1px solid black;
+    padding: 0.5rem;
+}
+
+#main-curriculum[data-action="curriculum"] #laboral-experience .experience .position-experience::before {
+    font-weight: 700;
+    content: "Cargo: ";
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 0.5rem;
+}
+
+#main-curriculum[data-action="curriculum"] #laboral-experience .experience .about-experience {
+    margin: 0.5rem 0;
+}
+
+@media screen and (min-width: 768px) {
+    #main-curriculum[data-action="curriculum"] #other-information {
+        flex-direction: row;
+        justify-content: space-around;
+    }
 }

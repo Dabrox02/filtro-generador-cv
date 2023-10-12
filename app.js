@@ -13,6 +13,7 @@ import {
   cleanMultiSelect
 } from "./modules/formCurriculum.js";
 import { loadTable, editCurriculum, delCurriculum } from "./modules/tableCurriculum.js";
+import { createCurriculum } from "./modules/viewCurriculum.js";
 
 const d = document;
 const $ = (e) => d.querySelector(e);
@@ -93,7 +94,7 @@ export const app = async () => {
       }
 
       if (e.target.matches("#btn-show-curriculum")) {
-        console.log(e.target)
+        await createCurriculum(Number(e.target.dataset.show));
       }
 
       if (e.target.matches("#btn-edit-curriculum")) {
