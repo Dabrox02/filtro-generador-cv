@@ -193,8 +193,8 @@ export const loadEditForm = ({ formData }) => {
   if (formData.laboral_experience_user.length !== 0) {
     $("#positionExperienceInput1").value = formData.laboral_experience_user[0].position_experience;
     $("#laboralExperienceInput1").value = formData.laboral_experience_user[0].laboral_experience;
-    if (formData.contact_user.length > 1) {
-      for (const [index, value] of Object.entries(formData.contact_user).slice(1, 5)) {
+    if (formData.laboral_experience_user.length > 1) {
+      for (const [index, value] of Object.entries(formData.laboral_experience_user).slice(1, 5)) {
         $(`#grid-experience-user`).insertAdjacentHTML("beforeend",  /*html*/`
                 <div class="col-12 experience-user" data-nexperience="${Number(index) + 1}">
                     <div class="form-group row">

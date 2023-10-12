@@ -67,6 +67,13 @@ export const app = async () => {
             dataAttribute: "ncontact",
           });
         }
+        for (let index = 0; index < 4; index++) {
+          delInputs({
+            elementsInputs: [...$a(".experience-user")],
+            elementHTML: $("#grid-experience-user"),
+            dataAttribute: "nexperience",
+          });
+        }
         $("#title-card").textContent = "Crear Curriculum";
         $("#sendData").textContent = "Crear Curriculum";
         $("#curriculum-form").dataset.action = "save";
@@ -103,6 +110,13 @@ export const app = async () => {
             elementsInputs: [...$a(".contact-user")],
             elementHTML: $("#grid-contact-user"),
             dataAttribute: "ncontact",
+          });
+        }
+        for (let index = 0; index < 4; index++) {
+          delInputs({
+            elementsInputs: [...$a(".experience-user")],
+            elementHTML: $("#grid-experience-user"),
+            dataAttribute: "nexperience",
           });
         }
         $("#title-card").textContent = "Editar Curriculum";
@@ -210,7 +224,7 @@ export const app = async () => {
           }), id: Number(e.target.dataset.edit)
         };
         await editDataForm(formatData);
-        $("#curriculum-form").reset();
+        // $("#curriculum-form").reset();
       }
     });
 
