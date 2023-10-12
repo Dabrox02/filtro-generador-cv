@@ -138,6 +138,43 @@ export const app = async () => {
       if (e.target.matches("#btn-del-curriculum")) {
         await delCurriculum(Number(e.target.dataset.del))
       }
+
+      if (e.target.matches("#printCurriculumPNG")) {
+        const elementTarget = $("#main-curriculum");
+        html2canvas(elementTarget)
+          .then(canvas => {
+            let enlace = document.createElement('a');
+            enlace.download = "curriculum.png";
+            enlace.href = canvas.toDataURL();
+            enlace.click();
+          });
+      }
+
+      if (e.target.matches("#printCurriculumPDF")) {
+        const elementTarget = $("#main-curriculum");
+        html2pdf()
+          .set({
+            margin: 1,
+            filename: 'curriculum.pdf',
+            image: {
+              type: 'jpeg',
+              quality: 0.98
+            },
+            html2canvas: {
+              scale: 3,
+              letterRendering: true,
+            },
+            jsPDF: {
+              unit: "in",
+              format: "a3",
+              orientation: 'portrait'
+            }
+          })
+          .from(elementTarget)
+          .save()
+          .catch(err => console.log(err));
+      }
+
     });
 
     d.addEventListener("submit", async (e) => {

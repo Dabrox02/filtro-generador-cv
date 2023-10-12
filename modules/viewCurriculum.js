@@ -8,7 +8,6 @@ const d = document;
 const $ = (e) => d.querySelector(e);
 
 export const createCurriculum = async (id) => {
-    console.log(id);
     let cus = await curriculum.getOne(id);
     let softuser = await Promise.all(cus.soft_skills_user.map(async (id) => await softSkill.getOne(id)));
     let harduser = await Promise.all(cus.hard_skills_user.map(async (id) => await hardSkill.getOne(id)));
@@ -27,6 +26,13 @@ export const createCurriculum = async (id) => {
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="container-fluid px-3">
+                <button id="printCurriculumPDF" type="button" class="btn btn-outline-danger">Descargar Curriculum PDF</button>
+                <button id="printCurriculumPNG" type="button" class="btn btn-outline-success">Descargar Curriculum PNG</button>
             </div>
         </div>
 
