@@ -1,8 +1,8 @@
 ## Autor
 - [Jaider Steeven Mendoza Cardona](https://github.com/Dabrox02)
 
-# Proyecto Prestamo Libreria
-Este proyecto consiste en la integración de las tecnologias aprendidas con el fin de crear una aplicacion web de gestion de libros, usando json-server como api.
+# Generador de Curriculums para Cargo Tech
+Este proyecto consiste en la integración de las tecnologias aprendidas con el fin de crear una aplicacion web para la generación de curriculums para profesiones Tech, exportable a PDF y PNG, usando json-server como api.
 ****
 ## Tecnologias utilizadas
 Para la concepción del proyecto se hizo uso de las siguientes tecnologias, las cuales se integraron para crear el proyecto:
